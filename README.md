@@ -47,7 +47,8 @@ O parâmetro --k define o número de clusters.
 ## Como rodar o programa
 
 Certifique-se de que há imagens dentro da pasta samples/.
-Execute o script com o comando apropriado:
+Execute o script com o comando apropriado.
+Os resultados (máscara e overlay) serão salvos automaticamente na pasta outputs/.
 
 ### Exemplo de execução:
 
@@ -93,6 +94,7 @@ python segment.py --input samples/verde5.jpg --method hsv --target green --hmin 
 python segment.py --input samples/verde5.jpg --method kmeans --k 8 --target green
 
 ---
+
 ## Observações gerais:
 
 Os testes comprovaram que o K-Means tem dificuldade em isolar alvos pequenos e diferenciar tons de mesma cor em grandes áreas (floresta vs. campo), exigindo k alto. Em contraste, o HSV se saiu melhor em todos os cenários complexos devido à capacidade de ajuste fino dos limites de h/S/V.
