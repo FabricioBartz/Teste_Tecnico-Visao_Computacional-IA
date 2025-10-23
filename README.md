@@ -79,11 +79,12 @@ Arquivo	Descrição
 ---
 ## Observações sobre Escolha de Ranges HSV
 
-A escolha de um range de Matiz (--hmin a --hmax) propositalmente curto mostrou-se extremamente eficaz.
+A escolha de um range de Matiz (--hmin e --hmax) propositalmente curto mostrou-se extremamente eficaz.
 Ao restringir o Matiz, o algoritmo consegue diferenciar tonalidades muito próximas. Isso garante que o Matiz do alvo seja capturado, enquanto tons vizinhos são automaticamente rejeitados.
 
-Saturação Mínima (--smin)
+Saturação Mínima (--smin).
 O ajuste do smin foi usado para excluir o céu e a neblina, pois essas áreas têm baixa saturação. Ao aumentar o smin, garantimos que apenas cores vibrante sejam incluídas.
+
 ---
 ## Melhores resultados encontrados:
 
