@@ -32,13 +32,6 @@ pip install opencv-python numpy
 Converte a imagem do espaço BGR (padrão do OpenCV) para HSV.
 Define intervalos de tonalidade, saturação e valor (H, S, V) para isolar a cor desejada.
 Gera uma máscara binária, onde os pixels dentro do intervalo são marcados em branco.
-
-Faixas padrão:
-
-Cor	   Hmin	 Hmax  Smin	 Smax  Vmin  Vmax
-Verde	35	 85	    50	 255	40	 255
-Azul	90	 130	50	 255	40	 255
-
 Esses valores podem ser ajustados via linha de comando para melhorar a precisão em imagens com iluminação diferente.
 
 ### Método K-Means
@@ -83,16 +76,16 @@ Arquivo	Descrição
 *_mask.png	Máscara binária com as áreas detectadas 
 *_overlay.png	Imagem original com as regiões detectadas destacadas
 
+---
+## Observações sobre Escolha de Ranges HSV
 
+A escolha de um range de Matiz (--hmin a --hmax) propositalmente curto mostrou-se extremamente eficaz.
+Ao restringir o Matiz, o algoritmo consegue diferenciar tonalidades muito próximas. Isso garante que o Matiz do alvo seja capturado, enquanto tons vizinhos são automaticamente rejeitados.
 
-
-Autor:
-Fabricio Fiss Bartz
-
-Os testes comprovaram que o K-Means tem dificuldade em isolar alvos pequenos (placa azul1.jpg) e diferenciar tons de mesma cor em grandes áreas (floresta vs. campo), exigindo k alto. Em contraste, o HSV se saiu melhor em todos os cenários complexos devido à capacidade de ajuste fino dos limites de h/S/V.
-
-
-
+Saturação Mínima (--smin)
+O ajuste do smin foi usado para excluir o céu e a neblina, pois essas áreas têm baixa saturação. Ao aumentar o smin, garantimos que apenas cores vibrante sejam incluídas.
+---
+## Melhores resultados encontrados:
 
 python segment.py --input samples/azul1.jpg --method hsv --target blue --hmin 105 --hmax 110 --smin 230 --smax 255 --vmin 40 --vmax 255
 python segment.py --input samples/azul1.jpg --method kmeans --k 4 --target blue
@@ -108,3 +101,11 @@ python segment.py --input samples/verde4.jpg --method kmeans --k 3 --target gree
 
 python segment.py --input samples/verde5.jpg --method hsv --target green --hmin 40 --hmax 44 --smin 50 --smax 255 --vmin 40 --vmax 255
 python segment.py --input samples/verde5.jpg --method kmeans --k 8 --target green
+---
+## Observações gerais:
+
+Os testes comprovaram que o K-Means tem dificuldade em isolar alvos pequenos e diferenciar tons de mesma cor em grandes áreas (floresta vs. campo), exigindo k alto. Em contraste, o HSV se saiu melhor em todos os cenários complexos devido à capacidade de ajuste fino dos limites de h/S/V.
+---
+
+Autor:
+Fabricio Fiss Bartz
