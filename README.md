@@ -62,6 +62,7 @@ python segment.py --input samples/azul1.jpg --method hsv --target blue --hmin 10
 - Segmentação por agrupamento (K-Means)
   
 python segment.py --input samples/azul2.jpg --method kmeans --k 3 --target blue
+
 python segment.py --input samples/verde4.jpg --method kmeans --k 3 --target green
 
 ---
