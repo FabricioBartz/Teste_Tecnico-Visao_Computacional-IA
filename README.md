@@ -51,15 +51,15 @@ Execute o script com o comando apropriado:
 
 ### Exemplo de execução:
 
-- Segmentação verde (HSV)
+- Segmentação verde (HSV):
 
 python segment.py --input samples/verde3.jpg --method hsv --target green --hmin 40 --hmax 45 --smin 50 --smax 255 --vmin 40 --vmax 255
 
-- Segmentação azul (HSV)
+- Segmentação azul (HSV):
   
 python segment.py --input samples/azul1.jpg --method hsv --target blue --hmin 105 --hmax 110 --smin 230 --smax 255 --vmin 40 --vmax 255
 
-- Segmentação por agrupamento (K-Means)
+- Segmentação por agrupamento (K-Means):
   
 python segment.py --input samples/azul2.jpg --method kmeans --k 3 --target blue
 
@@ -69,11 +69,9 @@ python segment.py --input samples/verde4.jpg --method kmeans --k 3 --target gree
 
 ## Observações sobre Escolha de Ranges HSV
 
-A escolha de um range de Matiz (--hmin e --hmax) propositalmente curto mostrou-se extremamente eficaz.
-Ao restringir o Matiz, o algoritmo consegue diferenciar tonalidades muito próximas. Isso garante que o Matiz do alvo seja capturado, enquanto tons vizinhos são automaticamente rejeitados.
+A escolha de um range de Matiz (--hmin e --hmax) propositalmente curto mostrou-se extremamente eficaz. Ao restringir o Matiz, o algoritmo consegue diferenciar tonalidades muito próximas. Isso garante que o Matiz do alvo seja capturado, enquanto tons vizinhos são automaticamente rejeitados.
 
-Saturação Mínima (--smin).
-O ajuste do smin foi usado para excluir o céu e a neblina, pois essas áreas têm baixa saturação. Ao aumentar o smin, garantimos que apenas cores vibrante sejam incluídas.
+O ajuste do smin (saturação mínima) foi usado para excluir o céu e a neblina, pois essas áreas têm baixa saturação. Ao aumentar o smin, garantimos que apenas cores vibrante sejam incluídas.
 
 ---
 
