@@ -69,9 +69,16 @@ python segment.py --input samples/verde4.jpg --method kmeans --k 3 --target gree
 
 ## Saída no terminal:
 
-Máscara salva em: outputs/planta1_hsv_green_mask.png
-Overlay salvo em: outputs/planta1_hsv_green_overlay.png
+Máscara salva em: 
+
+outputs/planta1_hsv_green_mask.png
+
+Overlay salvo em: 
+
+outputs/planta1_hsv_green_overlay.png
+
 Tempo de execução: 0.64s
+
 Pixels segmentados: 27.15%
 
 Os resultados são salvos automaticamente na pasta outputs/ com nomes únicos (timestamp).
