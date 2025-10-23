@@ -23,11 +23,11 @@ pip install -r requirements.txt
 ou manualmente:
 
 pip install opencv-python numpy
-
+```
 ---
 
-##Explicação dos métodos
-#Método HSV
+## Explicação dos métodos
+# Método HSV
 
 Converte a imagem do espaço BGR (padrão do OpenCV) para HSV.
 Define intervalos de tonalidade, saturação e valor (H, S, V) para isolar a cor desejada.
@@ -41,7 +41,7 @@ Azul	90	 130	50	 255	40	 255
 
 Esses valores podem ser ajustados via linha de comando para melhorar a precisão em imagens com iluminação diferente.
 
-#Método K-Means
+# Método K-Means
 
 Converte a imagem para HSV.
 Usa o algoritmo de K-Means para agrupar os pixels por cor.
@@ -50,14 +50,15 @@ O algoritmo escolhe o grupo cuja cor média é mais próxima do verde ou azul.
 Cria uma máscara binária com os pixels desse grupo.
 O parâmetro --k define o número de clusters.
 
+---
 ## Como rodar o programa
 
 Certifique-se de que há imagens dentro da pasta samples/.
-
 Execute o script com o comando apropriado:
 
 # Exemplo de execução
 # Segmentação verde (HSV)
+
 python segment.py --input samples/verde3.jpg --method hsv --target green --hmin 40 --hmax 45 --smin 50 --smax 255 --vmin 40 --vmax 255
 
 # Segmentação azul (HSV)
@@ -69,7 +70,7 @@ python segment.py --input samples/azul1.jpg --method hsv --target blue --hmin 10
 python segment.py --input samples/azul2.jpg --method kmeans --k 3 --target blue
 python segment.py --input samples/verde4.jpg --method kmeans --k 3 --target green
 
-Saída no terminal:
+# Saída no terminal:
 
 Máscara salva em: outputs/planta1_hsv_green_mask.png
 Overlay salvo em: outputs/planta1_hsv_green_overlay.png
