@@ -50,14 +50,14 @@ Certifique-se de que há imagens dentro da pasta samples/.
 Execute o script com o comando apropriado:
 
 ### Exemplo de execução:
--Segmentação verde (HSV)
+- Segmentação verde (HSV)
 
 python segment.py --input samples/verde3.jpg --method hsv --target green --hmin 40 --hmax 45 --smin 50 --smax 255 --vmin 40 --vmax 255
 
--Segmentação azul (HSV)
+- Segmentação azul (HSV)
 python segment.py --input samples/azul1.jpg --method hsv --target blue --hmin 105 --hmax 110 --smin 230 --smax 255 --vmin 40 --vmax 255
 
--Segmentação por agrupamento (K-Means)
+- Segmentação por agrupamento (K-Means)
 python segment.py --input samples/azul2.jpg --method kmeans --k 3 --target blue
 python segment.py --input samples/verde4.jpg --method kmeans --k 3 --target green
 
