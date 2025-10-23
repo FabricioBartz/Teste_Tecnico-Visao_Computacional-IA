@@ -67,28 +67,6 @@ python segment.py --input samples/verde4.jpg --method kmeans --k 3 --target gree
 
 ---
 
-## Saída no terminal:
-
-Máscara salva em: 
-
-outputs/planta1_hsv_green_mask.png
-
-Overlay salvo em: 
-
-outputs/planta1_hsv_green_overlay.png
-
-Tempo de execução: 0.64s
-
-Pixels segmentados: 27.15%
-
-Os resultados são salvos automaticamente na pasta outputs/ com nomes únicos (timestamp).
-
-Arquivo	Descrição
-*_mask.png	Máscara binária com as áreas detectadas 
-*_overlay.png	Imagem original com as regiões detectadas destacadas
-
----
-
 ## Observações sobre Escolha de Ranges HSV
 
 A escolha de um range de Matiz (--hmin e --hmax) propositalmente curto mostrou-se extremamente eficaz.
